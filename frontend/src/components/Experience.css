@@ -1,0 +1,160 @@
+.experience-section {
+  background: var(--dark-bg);
+}
+
+.timeline {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding-left: 40px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--gradient-1);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 50px;
+  padding-left: 60px;
+}
+
+.timeline-marker {
+  position: absolute;
+  left: -30px;
+  top: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--gradient-1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 1.2rem;
+  box-shadow: 0 5px 20px rgba(99, 102, 241, 0.4);
+  z-index: 2;
+}
+
+.timeline-content {
+  background: var(--dark-secondary);
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  transition: all 0.3s ease;
+}
+
+.timeline-content:hover {
+  transform: translateX(10px);
+  border-color: var(--primary-color);
+  box-shadow: 0 10px 40px rgba(99, 102, 241, 0.2);
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.exp-position {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+  background: var(--gradient-1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.exp-company {
+  font-size: 1.1rem;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.exp-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 5px;
+}
+
+.exp-period {
+  padding: 5px 15px;
+  background: var(--dark-bg);
+  border-radius: 20px;
+  font-size: 0.9rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.exp-location {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.exp-achievements h5 {
+  font-size: 1rem;
+  margin-bottom: 15px;
+  color: var(--text-primary);
+}
+
+.exp-achievements ul {
+  list-style: none;
+  padding: 0;
+}
+
+.exp-achievements li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 12px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.achievement-icon {
+  color: var(--primary-color);
+  margin-top: 5px;
+  flex-shrink: 0;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .timeline {
+    padding-left: 30px;
+  }
+
+  .timeline::before {
+    left: 15px;
+  }
+
+  .timeline-marker {
+    left: -25px;
+    width: 40px;
+    height: 40px;
+    font-size: 1rem;
+  }
+
+  .timeline-item {
+    padding-left: 40px;
+  }
+
+  .exp-header {
+    flex-direction: column;
+  }
+
+  .exp-meta {
+    align-items: flex-start;
+  }
+}
+
