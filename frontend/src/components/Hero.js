@@ -2,6 +2,7 @@ import React from 'react';
 import { FaGithub, FaLinkedin, FaEnvelope, FaPhone } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import './Hero.css';
+import img from './profile.jpg';
 
 const Hero = ({ profile }) => {
   if (!profile) return null;
@@ -69,7 +70,7 @@ const Hero = ({ profile }) => {
             </div>
             <div className="profile-image-wrapper">
               <img 
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop" 
+                src={img} 
                 alt="Profile"
                 className="profile-image"
               />

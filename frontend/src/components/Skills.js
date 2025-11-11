@@ -55,3 +55,5 @@ const Skills = ({ profile }) => {
 
 export default Skills;
 
+
+

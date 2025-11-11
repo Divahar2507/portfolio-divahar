@@ -77,9 +77,9 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio
           ]
         }],
         skills: {
-          languages: ["Python", "JavaScript", "Java", "TypeScript"],
-          frameworks: ["React.js", "Angular", "Node.js", "Spring", "TensorFlow", "Flask", "Django", "Express"],
-          databases: ["PostgreSQL", "MongoDB", "MySQL"],
+          languages: [ "Java", "Python", "JavaScript"],
+          frameworks: ["Spring", "Spring boot", "Django","React.js", "Angular", "Node.js","Express"],
+          databases: [ "MySQL","MongoDB"],
           tools: ["AWS", "GitHub Actions", "Docker", "WebSocket"],
           concepts: ["Microservices Architecture", "RESTful APIs", "CI/CD"]
         },
@@ -131,4 +131,6 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/portfolio
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
+
+
 

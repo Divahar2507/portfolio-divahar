@@ -47,3 +47,5 @@ const Footer = ({ profile }) => {
 
 export default Footer;
 
+
+
