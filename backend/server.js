@@ -17,7 +17,14 @@ const app = express();
 const PORT = process.env.PORT || 5000;
 
 // Middleware
-app.use(cors());
+const corsOptions = {
+  origin: [
+    'http://localhost:3000',
+    'https://portfolio-divahar-v64p.vercel.app'
+  ],
+  credentials: true
+};
+app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -72,9 +79,9 @@ const initialProfileObject = {
     ]
   }],
   skills: {
-    languages: [ "Java", "Python", "JavaScript"],
-    frameworks: ["Spring", "Spring boot", "Django","React.js", "Angular", "Node.js","Express"],
-    databases: [ "MySQL","MongoDB"],
+    languages: ["Java", "Python", "JavaScript"],
+    frameworks: ["Spring", "Spring boot", "Django", "React.js", "Angular", "Node.js", "Express"],
+    databases: ["MySQL", "MongoDB"],
     tools: ["AWS", "GitHub Actions", "Docker", "WebSocket"],
     concepts: ["Microservices Architecture", "RESTful APIs", "CI/CD"]
   },
