@@ -70,7 +70,8 @@ const Contact = ({ profile }) => {
               ))}
             </div>
           </div>
-          <form className="contact-form" onSubmit={handleSubmit} data-aos="fade-left">
+          
+          <form className="contact-form " onSubmit={handleSubmit} data-aos="fade-left">
             <div className="form-group">
               <input
                 type="text"
