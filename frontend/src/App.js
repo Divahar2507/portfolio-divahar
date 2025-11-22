@@ -8,7 +8,7 @@ import Projects from './components/Projects';
 import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
-import axios from 'axios';
+import api from './api';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './App.css';
@@ -25,7 +25,7 @@ function App() {
     });
 
     // Fetch profile data
-    axios.get('/api/profile')
+    api.get('/api/profile')
       .then(response => {
         setProfile(response.data);
         setLoading(false);

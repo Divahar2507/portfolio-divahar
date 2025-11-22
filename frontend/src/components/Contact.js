@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { FaEnvelope, FaPhone, FaLinkedin, FaGithub, FaMapMarkerAlt } from 'react-icons/fa';
-import axios from 'axios';
+import api from '../api';
 import './Contact.css';
 
 const Contact = ({ profile }) => {
@@ -21,7 +21,7 @@ const Contact = ({ profile }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('sending');
-    
+
     // Here you would typically send the form data to your backend
     // For now, we'll just simulate it
     setTimeout(() => {
@@ -70,7 +70,7 @@ const Contact = ({ profile }) => {
               ))}
             </div>
           </div>
-          
+
           <form className="contact-form " onSubmit={handleSubmit} data-aos="fade-left">
             <div className="form-group">
               <input

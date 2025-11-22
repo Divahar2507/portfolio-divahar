@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaGithub, FaExternalLinkAlt, FaStar, FaCodeBranch } from 'react-icons/fa';
-import axios from 'axios';
+import api from '../api';
 import './Projects.css';
 
 const Projects = ({ profile }) => {
@@ -10,7 +10,7 @@ const Projects = ({ profile }) => {
 
   useEffect(() => {
     // Fetch GitHub projects
-    axios.get('/api/projects/github')
+    api.get('/api/projects/github')
       .then(response => {
         setGithubProjects(response.data);
         setLoading(false);
@@ -31,8 +31,8 @@ const Projects = ({ profile }) => {
 
   const getFilteredProjects = () => {
     if (activeFilter === 'all') return allProjects;
-    return allProjects.filter(project => 
-      project.technologies?.some(tech => 
+    return allProjects.filter(project =>
+      project.technologies?.some(tech =>
         tech.toLowerCase().includes(activeFilter.toLowerCase())
       )
     );
@@ -46,7 +46,7 @@ const Projects = ({ profile }) => {
     <section id="projects" className="projects-section">
       <div className="container">
         <h2 className="section-title" data-aos="fade-up">My Projects</h2>
-        
+
         {allTechnologies.length > 0 && (
           <div className="project-filters" data-aos="fade-up">
             <button
@@ -83,8 +83,8 @@ const Projects = ({ profile }) => {
                 data-aos-delay={index * 100}
               >
                 <div className="project-image">
-                  <img 
-                    src={project.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop'} 
+                  <img
+                    src={project.image || 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop'}
                     alt={project.title}
                     onError={(e) => {
                       e.target.src = 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop';
@@ -93,9 +93,9 @@ const Projects = ({ profile }) => {
                   <div className="project-overlay">
                     <div className="project-links">
                       {project.githubUrl && (
-                        <a 
-                          href={project.githubUrl} 
-                          target="_blank" 
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="project-link"
                         >
@@ -103,9 +103,9 @@ const Projects = ({ profile }) => {
                         </a>
                       )}
                       {project.liveUrl && (
-                        <a 
-                          href={project.liveUrl} 
-                          target="_blank" 
+                        <a
+                          href={project.liveUrl}
+                          target="_blank"
                           rel="noopener noreferrer"
                           className="project-link"
                         >
