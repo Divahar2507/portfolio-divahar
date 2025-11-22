@@ -22,7 +22,9 @@ const corsOptions = {
     'http://localhost:3000',
     'https://portfolio-divahar-v64p.vercel.app'
   ],
-  credentials: true
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 };
 app.use(cors(corsOptions));
 app.use(express.json());
