@@ -16,17 +16,8 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Middleware
-const corsOptions = {
-  origin: [
-    'http://localhost:3000',
-    'https://portfolio-divahar-v64p.vercel.app'
-  ],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-};
-app.use(cors(corsOptions));
+// Middleware - Allow all origins for now
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
